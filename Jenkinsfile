@@ -25,7 +25,7 @@ pipeline {
     }
     stage ('publish image to dockerhub') {
 	 steps {	   
-        withCredentials([string(credentialsId: 'dockerhub', variable: 'dockerhub1')]) {
+        withCredentials([string(credentialsId: 'dockerhub1', variable: 'dockerhub1')]) {
 	sh 'docker login -u ranjithk100 -p ${dockerhub1}'   
 }
 		sh 'docker push ranjithk100/my-webapp:1.0'
